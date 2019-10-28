@@ -1,0 +1,27 @@
+<!-- <ul>
+    <li *ngFor = "let book of books; index as i; even as isEven">
+        {{i}} - {{book.title}}
+        <span *ngIf= "isEven">(Even Row)</span>
+    </li>
+</ul> -->
+
+<div *ngIf="books.length>0; then booksList; else noBooks"></div>
+<ng-template #booksList>
+    <h3>List of Books</h3>
+    <table>
+        <tr *ngFor="let book of books; index as i; even as isEven">
+            <td>
+                {{i}}
+            </td>
+            <td>
+                {{book.title}}
+            </td>
+            <td>
+                {{book.body}}
+            </td>
+        </tr>
+    </table>
+</ng-template>
+<ng-template #noBooks>
+    No Books
+</ng-template>

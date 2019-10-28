@@ -1,0 +1,120 @@
+<!-- <main-nav></main-nav> -->
+<app-employee></app-employee>
+<!-- Side Menu 
+<div class="main-menu menu-fixed menu-light menu-accordion" data-scroll-to-active="true">
+        <div class="main-menu-content">
+          <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class="nav-item" [class.open]="isActive('/')">
+              <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="material-icons">home</i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <ng-container >
+              <li class="navigation-header">
+                <span>Document</span><i class=" material-icons" data-toggle="tooltip" data-placement="right"
+                  data-original-title="Document">more_horiz</i>
+              </li>
+              <li class="nav-item" >
+                <a [routerLink]="['/fileManager']" routerLinkActive="active">
+                  <i class="material-icons">cloud</i>
+                  <span class="menu-title">File Management</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/deleteFileManager')" *ngIf="isLinkAvailable(Operation.UN_DELETE)">
+                <a *ngIf="canActivateFlag || canActivate(Operation.UN_DELETE)" [routerLink]="['/deleteFileManager']"
+                  routerLinkActive="active">
+                  <i class="material-icons">delete</i>
+                  <span class="menu-title">Manage Deleted Files</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/fileScan')" *ngIf="isLinkAvailable(Operation.SCAN)">
+                <a *ngIf="canActivateFlag || canActivate(Operation.SCAN)" [routerLink]="['/fileScan']"
+                  routerLinkActive="active">
+                  <i class="material-icons">scanner</i>
+                  <span class="menu-title">File Scan</span>
+                </a>
+              </li>
+      
+              <li class="nav-item" [class.open]="isActive('/metadatasearch')">
+                <a [routerLink]="['/metadatasearch']" routerLinkActive="active">
+                  <i class="material-icons">search</i>
+                  <span class="menu-title">Metadata Search</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/barcodeGenerator')"
+                *ngIf="isLinkAvailable(Operation.PRINT_BARCODE,Operation.GENERATE_BARCODE)">
+                <a *ngIf="canActivateFlag || canActivate(Operation.PRINT_BARCODE,Operation.GENERATE_BARCODE)"
+                  [routerLink]="['/barcodeGenerator']" routerLinkActive="active">
+                  <i class="fa fa-qrcode"></i>
+                  <span class="menu-title">Generate Barcode</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/batchScan')" *ngIf="isLinkAvailable(Operation.BATCH_SCAN)">
+                <a *ngIf="canActivateFlag || canActivate(Operation.BATCH_SCAN)" [routerLink]="['/batchScan']"
+                  routerLinkActive="active">
+                  <i class="fa fa-barcode"></i>
+                  <span class="menu-title">Batch Scan</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/uploadZip')" *ngIf="isLinkAvailable(Operation.ZIP_UPLOAD)">
+                <a *ngIf="canActivateFlag || canActivate(Operation.ZIP_UPLOAD)" [routerLink]="['/uploadZip']"
+                  routerLinkActive="active">
+                  <i class="fa fa-file-archive-o"></i>
+                  <span class="menu-title">Process Zip Files</span>
+                </a>
+              </li>
+            </ng-container>
+            <ng-container *ngIf="showAdminMenu()">
+              <li class=" navigation-header">
+                <span>Administration</span><i class="material-icons" data-toggle="tooltip" data-placement="right"
+                  data-original-title="Administration">more_horiz</i>
+              </li>
+               <li class="nav-item" [class.open]="isActive('/onboardApplication')">
+                    <a [routerLink]="['/onboardApplication']" routerLinkActive="active">
+                      <i class="material-icons">add_to_queue</i>
+                      <span class="menu-title" >Onboard Applications</span>
+                    </a>
+                  </li>  
+              <li *ngIf="checkOnlyAppAdmin()&&!checkOnlyAdmin()" class="nav-item"
+                [class.open]="isActive('/onboardApplication/repoMgmt')">
+                <a [routerLink]="['/onboardApplication/repoMgmt']" routerLinkActive="active">
+                  <i class="material-icons">add_to_queue</i>
+                  <span class="menu-title">Onboard Applications</span>
+                </a>
+              </li>
+              <li *ngIf="checkOnlyAdmin()&&!checkOnlyAppAdmin()" class="nav-item"
+                [class.open]="isActive('/onboardApplication')">
+                <a [routerLink]="['/onboardApplication']" routerLinkActive="active">
+                  <i class="material-icons">add_to_queue</i>
+                  <span class="menu-title">Onboard Applications</span>
+                </a>
+              </li>
+              <li *ngIf="checkOnlyAdmin()" class="nav-item" [class.open]="isActive('/errorLogs')">
+                <a [routerLink]="['/errorLogs']" routerLinkActive="active">
+                  <i class="material-icons">error_outline</i>
+                  <span class="menu-title">Error Logs</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/accessLogs')">
+                <a [routerLink]="['/accessLogs']" routerLinkActive="active">
+                  <i class="material-icons">access_time</i>
+                  <span class="menu-title">Access Logs</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/security')">
+                <a [routerLink]="['/security']" routerLinkActive="active">
+                  <i class="material-icons">security</i>
+                  <span class="menu-title">Security</span>
+                </a>
+              </li>
+              <li class="nav-item" [class.open]="isActive('/referenceData')">
+                <a [routerLink]="['/referenceData']" routerLinkActive="active">
+                  <i class="material-icons">library_books</i>
+                  <span class="menu-title">Reference Data</span>
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div> -->

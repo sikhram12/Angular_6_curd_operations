@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+    font-size: 100%;
+    font-family: "Helvetica", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background: #eee;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 0.8rem 1rem;
+    line-height: 1;
+}
+
+nav ul li {
+    border-bottom: 1px solid #fff;
+}
+
+/* Branding */
+nav div:first-child {
+    background: #eee;
+    text-align: center;
+}
+nav div:first-child h1 {
+    padding: 0.8rem 0;
+    margin: 0;
+
+}
+
+nav div:first-child a {
+    text-decoration: none;
+    color: #343a40;
+    
+}
+
+nav div:first-child h1, nav ul {
+    margin: 0;
+}
+
+/* Styling for large devices */
+@media only screen and (min-width: 576px) {
+    nav {
+        background: #000;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+
+    }
+
+    nav div:first-child {
+        background: none;
+    }
+    nav div:first-child h1 {
+        font-size: 1.2rem;
+        margin-left: 0.8rem;
+       
+    }
+
+    nav div:first-child h1 a {
+        color: #eee;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        background: none;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        border-bottom: none;
+        flex: 1 0 auto;
+        position: relative;
+    }
+
+    nav ul li a {
+        color: #eee;
+        text-align: center;
+    }
+
+    
+    nav ul li a::before, nav ul li a::after  {
+        content: "";                
+        position: absolute;
+        bottom: 0;
+        left: 0;                
+        width: 0;
+        height: 3px;
+        background: tomato;
+
+        transition: .2s width ease-in-out;
+    }
+
+    nav ul li a:hover::after, nav ul li a:hover::before {
+        width: 100%;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
