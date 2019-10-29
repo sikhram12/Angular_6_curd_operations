@@ -16,15 +16,16 @@
                   </mat-form-field>    
                            
                   <mat-form-field>
-                    <input matInput placeholder="age" formControlName="age" required>
+                    <input  input type="number" matInput placeholder="age" formControlName="age" >
                   </mat-form-field>
 
                   <mat-form-field>
-                        <input matInput placeholder="experience" formControlName="experience" required>
+                        <input input type="number" matInput placeholder="experience" formControlName="experience" required>
                       </mat-form-field>
     
                  <mat-form-field>
-                    <input matInput placeholder="phone" formControlName="phone">
+                    <input input type="number" id="phone" matInput placeholder="phone" formControlName="phone" ngModel maxlength="5">
+                    
                   </mat-form-field>
     
                   <mat-form-field>
@@ -40,11 +41,11 @@
                   </mat-form-field>
               
                 <mat-form-field>
-                    <input matInput placeholder="zipcode" formControlName="zipcode">
+                    <input input type="number" matInput placeholder="zipcode" formControlName="zipcode">
                 </mat-form-field>
                 
                 <mat-form-field>
-                    <input matInput placeholder="workingDays" formControlName="workingDays">
+                    <input input type="number" matInput placeholder="workingDays" formControlName="workingDays">
                 </mat-form-field>
                 
                 <!-- <mat-form-field>
@@ -58,7 +59,7 @@
     
                 <div fxFlex></div>
                 <mat-dialog-actions>
-                  <!-- <mat-error *ngIf="invalidFormFlag">Required Fields cannot be left blank. &nbsp;</mat-error> -->
+                  <mat-error *ngIf="invalidFormFlag">Required Fields cannot be left blank. &nbsp;</mat-error>
                   <button class="mat-raised-button" (click)="close()">Close</button>
                   <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
                 </mat-dialog-actions>
