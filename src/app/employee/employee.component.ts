@@ -14,7 +14,7 @@ export class EmployeeComponent implements OnInit {
 
   empObj: EmployeeObject;
   dataSource = new MatTableDataSource<EmployeeObject>();
-  displayedColumns = ['id', 'firstName','lastName', 'age','experience', 'phone','streetAdress', 'city','state', 'zipcode','actions', 'delete']
+  displayedColumns = ['id', 'firstName','lastName', 'age','experience', 'phone','streetAdress', 'city','state', 'zipcode','joinDate','actions', 'delete']
   dataService: any;
   exampleDatabase: AppService | null;
   result : any;

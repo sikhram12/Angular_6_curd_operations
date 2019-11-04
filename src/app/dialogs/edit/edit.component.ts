@@ -74,7 +74,7 @@ export class EditComponent implements OnInit {
           this.emp.state = this.form.get('state').value;
           this.emp.zipcode = this.form.get('zipcode').value;
           this.emp.workingDays = this.form.get('workingDays').value;
-          // this.emp.joinDate = this.form.get('joinDate').value;
+          this.emp.joinDate = this.form.get('joinDate').value;
          
           this.dialogRef.close(this.emp);
     

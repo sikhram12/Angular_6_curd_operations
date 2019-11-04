@@ -14,3 +14,9 @@ export class EmployeeObject {
   joinDate?: Date;
 
 }
+
+export interface ClientDetails {
+  map : Map<string, Map<string, string>> ;
+  //[id: string]: any;
+  //clientDetailsFound:boolean;
+}

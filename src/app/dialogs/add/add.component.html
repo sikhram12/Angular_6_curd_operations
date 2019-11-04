@@ -31,26 +31,52 @@
                   <mat-form-field>
                     <input matInput placeholder="streetAdress" formControlName="streetAdress">
                   </mat-form-field>
-              
+
                   <mat-form-field>
+                    <!-- <input matInput placeholder="state" formControlName="state"> -->
+                    <mat-label>state</mat-label>
+                    <mat-select (selectionChange)="getCities($event.value)">
+                      <mat-option *ngFor="let state of states" [value]="state" >
+                        {{state}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              
+                  <!-- <mat-form-field>
                     <input matInput placeholder="city" formControlName="city">
-                  </mat-form-field>
-              
+                  </mat-form-field> -->
                   <mat-form-field>
-                    <input matInput placeholder="state" formControlName="state">
+                    <!-- <input matInput placeholder="state" formControlName="state"> -->
+                    <mat-label>city</mat-label>
+                    <mat-select (selectionChange)="getZipcode($event.value)">
+                      <mat-option *ngFor="let city of cities" [value]="city" >
+                        {{city}}
+                      </mat-option>
+                    </mat-select>
                   </mat-form-field>
               
-                <mat-form-field>
+                
+              
+                <!-- <mat-form-field>
                     <input input type="number" matInput placeholder="zipcode" formControlName="zipcode">
+                </mat-form-field> -->
+
+                <mat-form-field>
+                  <mat-label>zipcode</mat-label>
+                  <mat-select >
+                    <mat-option *ngFor="let zipcode of zipcodes" [value]="zipcode" >
+                      {{zipcode}}
+                    </mat-option>
+                  </mat-select>
                 </mat-form-field>
                 
                 <mat-form-field>
                     <input input type="number" matInput placeholder="workingDays" formControlName="workingDays">
                 </mat-form-field>
                 
-                <!-- <mat-form-field>
-                    <input matInput placeholder="zipcode" formControlName="zipcode">
-                </mat-form-field> -->
+                <mat-form-field>
+                  <input input type="date" matInput placeholder="joinDate" formControlName="joinDate">
+              </mat-form-field>
     
                   <!-- <mat-checkbox *ngIf="!isDefault" formControlName="disable">Disable Mode</mat-checkbox> -->
               

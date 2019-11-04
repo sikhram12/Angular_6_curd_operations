@@ -68,6 +68,11 @@
             <mat-cell *matCellDef="let row"> {{row.zipcode}}</mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="joinDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>JoinDate</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.joinDate}}</mat-cell>
+      </ng-container>
+
 
 
         <!-- actions -->

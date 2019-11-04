@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Subject, Observable, throwError, BehaviorSubject } from 'rxjs';
-import { EmployeeObject } from './employee/employee';
+import { EmployeeObject, ClientDetails } from './employee/employee';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -30,6 +30,10 @@ export class AppService {
 
     deleteEmployee(id: string) {
         return this.http.get<string>("http://localhost:8080/demo/employee/deleteEmployee/"+id);
+    }
+
+    stateWithCities() {
+        return this.http.get<ClientDetails>("http://localhost:8080/demo/employee/stateWithCities");
     }
 
 
