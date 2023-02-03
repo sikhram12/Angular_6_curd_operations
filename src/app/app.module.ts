@@ -13,6 +13,9 @@ import { MatInputModule, MatSelectModule, MatSortModule, MatTableModule, MatTool
 import { AddComponent } from './dialogs/add/add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditComponent } from './dialogs/edit/edit.component';
+import { LoginComponent } from './login/login.component';
+import { SidebarModule } from 'ng-sidebar';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +25,8 @@ import { EditComponent } from './dialogs/edit/edit.component';
     EmployeeComponent,
     AddComponent,
     EditComponent,
-
-    
+    LoginComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { EditComponent } from './dialogs/edit/edit.component';
     FormsModule,
     MatDialogModule,
     ReactiveFormsModule,
-
+    SidebarModule.forRoot(),
   ],
   providers: [
     AppService

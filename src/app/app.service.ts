@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Subject, Observable, throwError, BehaviorSubject } from 'rxjs';
-import { EmployeeObject, ClientDetails } from './employee/employee';
+import { EmployeeObject, ClientDetails, UserLogin } from './employee/employee';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -36,6 +36,9 @@ export class AppService {
         return this.http.get<ClientDetails>("http://localhost:8080/demo/employee/stateWithCities");
     }
 
+    login(req : UserLogin) {
+        return this.http.post<string>("http://localhost:8080/demo/employee/login", req, {responseType: 'text' as 'json' });
+    }
 
     // getMetadataFields() {
     //     return this.http.get<MetadataObject[]>(endpoints.getMetadataFields, httpOptions);
